@@ -1,7 +1,9 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+#This function creates an object.
+#The object is a list of 3 functions defined in the main function environment.
+#These 3 functions search and return objects in the cache that are in the environment of the main function.
 
 makeCacheMatrix <- function(x = matrix()) {
   mi <- list(matrix = x, inverse = NULL)
@@ -13,7 +15,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+#This function looks for the inverse in the environment of the previous function.
+#If the inverse is NULL, then it calculates it.
+#If the inverse is not NULL, it returns the obtained value.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -32,7 +36,7 @@ cacheSolve <- function(x, ...) {
 
 # An Example
 
-x <- matrix(rnorm(9),3,3)
+x <- matrix(rnorm(100),10,10)
 solve(x)
 
 a <- makeCacheMatrix(x)
